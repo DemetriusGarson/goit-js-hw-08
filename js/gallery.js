@@ -70,15 +70,10 @@ const refs = {
 
 galleryListCreator(images);
 
-// refs.image = document.querySelector('.gallery-image');
-// refs.list = document.querySelector('.gallery-item');
-// refs.link = document.querySelector('.gallery-link');
-
 refs.gallery.addEventListener('click', onListClick);
 
 function galleryListCreator(images) {
   const galleryListsArray = [];
-  let galleryList;
 
   for (const image of images) {
     const { preview, original, description } = image;
@@ -110,8 +105,8 @@ function onListClick(event) {
         <img
       class="gallery-image"
       src="${event.target.dataset.source}"
-      data-source="${event.target.original}"
-      alt="${event.target.description}"
+      data-source="${event.target.dataset.source}"
+      alt="${event.target.alt}"
       width="360"
       height="200"
     />
